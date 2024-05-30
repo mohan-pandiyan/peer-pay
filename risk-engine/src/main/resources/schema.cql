@@ -1,3 +1,5 @@
+CREATE KEYSPACE IF NOT EXISTS peer_payments  WITH REPLICATION = { 'class' : 'SimpleStrategy', 'replication_factor' : 1 };
+
 CREATE TABLE IF NOT EXISTS peer_payments.payment_processing (
     transaction_id UUID,         // Partition key (unique identifier for the payment)
     updated_time BIGINT,  // Clustering key (for ordering status)
